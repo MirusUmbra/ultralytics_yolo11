@@ -1,3 +1,9 @@
+脚本在tool下
+1. ultralytics/engine/trainer.py增加了prune、 prune_finetune、teacher、distillation_loss参数对应剪枝L1约束、剪枝后回调训练、蒸馏教师模型、蒸馏损失函数
+2. 剪枝流程：开启prune=True训练 -> prune.py剪枝 -> prune_finetune=True回调训练，具体调整可以去prune.py进行
+3. 蒸馏流程：将学生模型teacher设为加载教师模型,并置顶loss类型，默认为CWDLoss，可以在ultralytics/engine/trainer.py下自行添加，可参照traine_distillation.py；默认教师yolo11，学生yolo8，可自行调整
+
+
 <div align="center">
   <p>
     <a href="https://www.ultralytics.com/blog/ultralytics-yolo11-has-arrived-redefine-whats-possible-in-ai" target="_blank">
