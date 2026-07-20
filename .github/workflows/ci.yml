@@ -51,7 +51,7 @@ jobs:
         os: [ubuntu-latest]
         python-version: ["3.11"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -106,7 +106,7 @@ jobs:
         python-version: ["3.11"]
         model: [yolo11n]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -171,7 +171,7 @@ jobs:
             python-version: "3.8" # torch 1.8.0 requires python >=3.6, <=3.9
             torch: "1.8.0" # min torch version CI https://pypi.org/project/torchvision/
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -215,7 +215,7 @@ jobs:
     timeout-minutes: 360
     runs-on: gpu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v5
       - name: Install requirements
         shell: bash # for Windows compatibility
@@ -243,7 +243,7 @@ jobs:
     timeout-minutes: 120
     runs-on: raspberry-pi
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Activate Virtual Environment for Tests
         run: |
           python3.11 -m venv env-tests
